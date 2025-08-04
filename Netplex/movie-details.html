@@ -93,23 +93,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     &times; 
 </button>
 
-<script>
-    document.getElementById('watch-now-btn').addEventListener('click', function () {
-        // Replace with your desired URL
-        const url = 'https://preoccupyray.com/xd85svczxx?key=5616a1fff848a3cb7920a6b47a4958fc';
-
-        // Open the link in a new background tab (modern browsers may block this without user interaction)
-        const newWindow = window.open(url, '_blank');
-
-        // Optional: blur the new tab to keep focus on the current window
-        if (newWindow) {
-            newWindow.blur();
-            window.focus();
-        } else {
-            alert("Popup blocked! Please allow popups for this website.");
-        }
-    });
-</script>
 
 <!-- Flex container for iframe and movie details -->
 <div class="movie-layout">
@@ -127,10 +110,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h1 id="movie-title"></h1>
         <p id="movie-description"></p>
         <div class="movie-cast" id="movie-cast"></div>
-        <!-- Optional: Watch Now button -->
-        <div class="button-container">
-            <button id="watch-now-btn" class="watch-now-btn"><h2><b>WATCH NOW!</b></h2></button>
-        </div>
     </div>
 </div>
 
@@ -370,4 +349,5 @@ const firebaseConfig = {
     
 </body>
 </html>
+
 
