@@ -288,6 +288,33 @@ const fetchMovieDetails = async () => {
         // Movie Description
         document.getElementById('movie-description').textContent = movie.overview;
 
+        // Fetch and display cast
+const castUrl = `${baseUrl}/movie/${movieId}/credits?api_key=${apiKey}&language=en-US`;
+const castResponse = await fetch(castUrl);
+const castData = await castResponse.json();
+
+const castContainer = document.getElementById('movie-cast');
+castContainer.innerHTML = ''; // Clear old cast
+
+castData.cast.slice(0, 6).forEach(actor => {
+    const member = document.createElement('div');
+    member.classList.add('cast-member');
+
+    const img = document.createElement('img');
+    img.src = actor.profile_path
+      ? `https://image.tmdb.org/t/p/w185${actor.profile_path}`
+      : 'https://via.placeholder.com/100x150?text=No+Image';
+    member.appendChild(img);
+
+    const name = document.createElement('p');
+    name.textContent = actor.name;
+    name.style.color = 'white';
+    member.appendChild(name);
+
+    castContainer.appendChild(member);
+});
+
+
         // Movie Rating (star rating)
         const movieRating = movie.vote_average; // Rating from 1 to 10
         const starContainer = document.getElementById('movie-rating');
