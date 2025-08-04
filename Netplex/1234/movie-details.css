@@ -2208,3 +2208,43 @@ meta[http-equiv="refresh"] {
 /* Adsterra DL Style Ad Container Start */
  
 /* Adsterra DL Style Ad Container End */
+
+/* Flex layout for iframe and movie info */
+.movie-layout {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+/* Left: Iframe */
+.iframe-section {
+    flex: 0 0 60%;
+    max-width: 60%;
+    padding-right: 20px;
+}
+
+/* Right: Poster and text */
+.details-section {
+    flex: 0 0 40%;
+    max-width: 40%;
+}
+
+.details-section img.movie-poster {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Responsive fallback for small screens */
+@media screen and (max-width: 768px) {
+    .movie-layout {
+        flex-direction: column;
+    }
+    .iframe-section,
+    .details-section {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
