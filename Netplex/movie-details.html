@@ -87,7 +87,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="blurred-background"></div> <!-- Background Container -->
     
-    <!-- Flex container for iframe and movie details -->
+    <div class="movie-details">
+        <!-- Close Button (X) -->
+        <button class="close-button" id="close-button"><span class="close-text">CLOSE</span>
+    &times; 
+</button>
+
+<script>
+    document.getElementById('watch-now-btn').addEventListener('click', function () {
+        // Replace with your desired URL
+        const url = 'https://preoccupyray.com/xd85svczxx?key=5616a1fff848a3cb7920a6b47a4958fc';
+
+        // Open the link in a new background tab (modern browsers may block this without user interaction)
+        const newWindow = window.open(url, '_blank');
+
+        // Optional: blur the new tab to keep focus on the current window
+        if (newWindow) {
+            newWindow.blur();
+            window.focus();
+        } else {
+            alert("Popup blocked! Please allow popups for this website.");
+        }
+    });
+</script>
+
+<!-- Flex container for iframe and movie details -->
 <div class="movie-layout">
     <!-- Iframe section -->
     <div class="iframe-section">
@@ -103,9 +127,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h1 id="movie-title"></h1>
         <p id="movie-description"></p>
         <div class="movie-cast" id="movie-cast"></div>
+        <!-- Optional: Watch Now button -->
+        <div class="button-container">
+            <button id="watch-now-btn" class="watch-now-btn"><h2><b>WATCH NOW!</b></h2></button>
+        </div>
     </div>
 </div>
- 
+
+           
+
+<!-- Floating Message Start-->
+<div id="floating-message">
+    <i class="fa-solid fa-triangle-exclamation"></i>
+    <h2>Notice!</h2><br>
+    <h>
+        AD will open. Press Back to continue watching!<br><br>
+        If the video doesn't work,<br> 
+        switch to another SERVER!<br><br> 
+        If all servers are not working for that specific video, try our site version 2 with more servers:<br> 
+        <a href="https://netplex-v2.pages.dev" target="_blank" style="color: #0296cc; text-decoration: none;">https://netplex-v2.pages.dev</a>
+    </h><button onclick="window.location.href='https://netplex-v2.pages.dev'">V2</button>
+    <br>
+    <button onclick="closeMessage()">CLOSE</button>
+    
+</div>
+<!-- Floating Message End-->
+
+</div> 
 
 
 <!-- Adsterra DL 3 Ad Container Start -->
@@ -322,6 +370,4 @@ const firebaseConfig = {
     
 </body>
 </html>
-
-
 
