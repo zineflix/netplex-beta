@@ -350,8 +350,7 @@ castData.cast.slice(0, 6).forEach(actor => {
             genreContainer.appendChild(genreElement);
         });
 
-        const watchNowBtn = document.getElementById('watch-now-btn');
-        watchNowBtn.addEventListener('click', () => {
+        document.addEventListener("DOMContentLoaded", function () {
             // Fetch the current movie history
 
             // Now load the movie iframe for watching
