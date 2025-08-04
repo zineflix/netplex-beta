@@ -351,19 +351,26 @@ castData.cast.slice(0, 6).forEach(actor => {
         });
 
         document.addEventListener("DOMContentLoaded", function () {
-            // Fetch the current movie history
+    // Show the iframe container immediately
+    const iframeContainer = document.getElementById('iframe-container');
+    iframeContainer.style.display = 'flex';
 
-            // Now load the movie iframe for watching
-            const iframeContainer = document.getElementById('iframe-container');
-            iframeContainer.style.display = 'flex'; // Show iframe container
-        
-            // Inject iframe inside iframe container
-            const iframe = document.getElementById('movie-iframe');
-            iframe.src = `${MOVIE_ENDPOINTS[currentServerIndex].url}${movieId}?primaryColor=ffffff&secondaryColor=a2a2a2&iconColor=eefdec&icons=default&player=jw&title=true&poster=true&autoplay=true`; // Use selected server URL
-        
-            // Hide the Watch Now button
-            watchNowBtn.style.display = 'none'; // Hide the Watch Now button
-        });
+    // Set the iframe src
+    const iframe = document.getElementById('movie-iframe');
+
+    // You must define these variables earlier:
+    // const currentServerIndex = 0;
+    // const movieId = "tt3896198";
+    // const MOVIE_ENDPOINTS = [{ url: "https://vidsrc.to/embed/movie/" }];
+
+    const movieId = "tt3896198"; // Example value
+    const currentServerIndex = 0;
+    const MOVIE_ENDPOINTS = [
+        { url: "https://vidsrc.to/embed/movie/" }
+    ];
+
+    iframe.src = `${MOVIE_ENDPOINTS[currentServerIndex].url}${movieId}?primaryColor=ffffff&secondaryColor=a2a2a2&iconColor=eefdec&icons=default&player=jw&title=true&poster=true&autoplay=true`;
+});
 
         // Fetch More Like This Movies
         fetchMoreLikeThis(movieId);
