@@ -466,34 +466,7 @@ const fetchMoreLikeThis = async (movieId) => {
 };
 
 // Fetch and display movie details on page load
-fetchMovieDetails(
-    // Fetch and display cast
-const castUrl = `${baseUrl}/movie/${movieId}/credits?api_key=${apiKey}&language=en-US`;
-const castResponse = await fetch(castUrl);
-const castData = await castResponse.json();
-
-const castContainer = document.getElementById('movie-cast');
-castContainer.innerHTML = ''; // Clear old cast
-
-castData.cast.slice(0, 6).forEach(actor => {
-    const member = document.createElement('div');
-    member.classList.add('cast-member');
-
-    const img = document.createElement('img');
-    img.src = actor.profile_path
-      ? `https://image.tmdb.org/t/p/w185${actor.profile_path}`
-      : 'https://via.placeholder.com/100x150?text=No+Image';
-    member.appendChild(img);
-
-    const name = document.createElement('p');
-    name.textContent = actor.name;
-    name.style.color = 'white';
-    member.appendChild(name);
-
-    castContainer.appendChild(member);
-});
-
-);
+fetchMovieDetails();
 
 // Fetch data for different categories
 fetchMovies('popular', 'popularMovies');
