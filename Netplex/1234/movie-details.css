@@ -2208,3 +2208,49 @@ meta[http-equiv="refresh"] {
 /* Adsterra DL Style Ad Container Start */
  
 /* Adsterra DL Style Ad Container End */
+
+.movie-layout-row {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  flex-wrap: wrap; /* Helps on smaller screens */
+}
+
+.movie-description-container {
+  max-width: 600px;
+}
+
+.movie-meta {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+
+.movie-release-date {
+  background-color: #b91515;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.movie-genres .genre {
+  background-color: #b91515;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+
+@media (max-width: 768px) {
+  .movie-layout-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .movie-description-container {
+    text-align: center;
+  }
+}
